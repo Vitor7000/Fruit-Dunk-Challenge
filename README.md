@@ -1,22 +1,39 @@
 # Fruit Dunk Challenge
 
+**Vitor M M Ribeiro - RU: 958318**
+
 ## Descrição
 
-Fruit Dunk Challenge é um jogo 2D desenvolvido em Python com a biblioteca Pygame. O jogador controla um personagem que é um jogador de basquete e o objetivo é coletar o máximo de frutas que caem do céu, evitando os obstáculos.
-
-**Nota:** Esta versão do jogo utiliza gráficos de espaço reservado. Para adicionar seus próprios gráficos, substitua os arquivos `player.png`, `banana.png` e `fire.png` na pasta `assets` por suas próprias imagens.
+'Fruit Dunk Challenge' é um jogo 2D desenvolvido em Python com a biblioteca Pygame. O jogador controla um jogador de basquete que deve coletar frutas que caem do céu, enquanto desvia de obstáculos. O objetivo é marcar o máximo de pontos possível.
 
 ## Instalação
 
-Para jogar, você precisa ter o Python e o Pygame instalados em seu sistema.
+Siga as instruções abaixo para configurar o ambiente e rodar o jogo.
 
-### Instalando Python
+### 1. Crie um Ambiente Virtual
 
-Se você ainda não tem o Python instalado, pode baixá-lo em [python.org](httpss://www.python.org/downloads/).
+É uma boa prática criar um ambiente virtual para isolar as dependências do projeto. Abra o terminal e execute os seguintes comandos:
 
-### Instalando o Pygame
+```bash
+# Crie um ambiente virtual chamado 'venv'
+python -m venv venv
+```
 
-Depois de instalar o Python, você pode instalar o Pygame abrindo seu terminal ou prompt de comando e executando o seguinte comando:
+### 2. Ative o Ambiente Virtual
+
+- **No Windows:**
+  ```bash
+  .\\venv\\Scripts\\activate
+  ```
+
+- **No macOS e Linux:**
+  ```bash
+  source venv/bin/activate
+  ```
+
+### 3. Instale as Dependências
+
+Com o ambiente virtual ativado, instale as bibliotecas necessárias:
 
 ```bash
 pip install pygame
@@ -24,7 +41,7 @@ pip install pygame
 
 ## Como Jogar
 
-Para iniciar o jogo, execute o seguinte comando no diretório do projeto:
+Para iniciar o jogo, execute o seguinte comando no terminal:
 
 ```bash
 python main.py
@@ -32,15 +49,31 @@ python main.py
 
 ### Controles
 
-- **Seta para a esquerda:** Mover para a esquerda
-- **Seta para a direita:** Mover para a direita
-- **Barra de espaço:** Pular
+- **Seta Esquerda:** Mover para a esquerda
+- **Seta Direita:** Mover para a direita
+- **Barra de Espaço:** Pular
 
-## Arquivo Executável (`.exe`)
+## Como Gerar o Arquivo Executável (.exe)
 
-Devido a limitações do ambiente de desenvolvimento, não foi possível gerar um arquivo `.exe`. No entanto, o jogo pode ser executado a partir do código-fonte, seguindo as instruções acima.
+Para criar um arquivo `.exe` que pode ser executado em qualquer computador Windows sem a necessidade de instalar Python ou Pygame, siga os passos abaixo.
 
-## Informações do Desenvolvedor
+### 1. Instale o PyInstaller
 
-- **Nome:** Vitor M M Ribeiro
-- **RU:** 958318
+Certifique-se de que seu ambiente virtual esteja ativado e instale o PyInstaller:
+
+```bash
+pip install pyinstaller
+```
+
+### 2. Gere o Executável
+
+Navegue até o diretório do projeto no terminal e execute o seguinte comando:
+
+```bash
+pyinstaller --onefile --windowed main.py
+```
+
+- `--onefile`: Agrupa tudo em um único arquivo executável.
+- `--windowed`: Evita que uma janela de console apareça ao executar o jogo.
+
+Após a conclusão, você encontrará o arquivo `main.exe` dentro de uma pasta chamada `dist`.
